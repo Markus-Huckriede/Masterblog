@@ -1,5 +1,6 @@
 import json
 from flask import Flask, render_template, request, redirect, url_for
+import os
 
 app = Flask(__name__)
 
@@ -18,11 +19,11 @@ def add():
 
         with open('blog_posts.json', 'r') as file:
             blog_posts = json.load(file)
-        new_id = max(post['id'] for post in blog_posts) if blog_posts else 1
+
         new_post = {
-            'id': new_id + 1,
-            'title': title,
-            'content': content
+          'id': blog_posts[-1]['id'] + 1 if blog_posts else 1,
+          'title': title,
+          'content': content
         }
         blog_posts.append(new_post)
 
@@ -67,5 +68,9 @@ def update(post_id):
 
     return render_template('update.html', post=post)
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
+
+
