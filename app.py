@@ -4,6 +4,7 @@ import os
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     with open('blog_posts.json', 'r') as file:
@@ -16,14 +17,17 @@ def add():
     if request.method == 'POST':
         title = request.form.get('title')
         content = request.form.get('content')
-
+        author = request.form.get('author')
         with open('blog_posts.json', 'r') as file:
             blog_posts = json.load(file)
 
+        id = blog_posts[-1]['id'] + 1 if blog_posts else 1
+
         new_post = {
-          'id': blog_posts[-1]['id'] + 1 if blog_posts else 1,
-          'title': title,
-          'content': content
+            'id': id,
+            'author': author,
+            'title': title,
+            'content': content
         }
         blog_posts.append(new_post)
 
