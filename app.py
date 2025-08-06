@@ -18,8 +18,9 @@ def add():
 
         with open('blog_posts.json', 'r') as file:
             blog_posts = json.load(file)
-
+        new_id = max(post['id'] for post in blog_posts) if blog_posts else 1
         new_post = {
+            'id': new_id + 1,
             'title': title,
             'content': content
         }
@@ -46,15 +47,6 @@ def delete(post_id):
     return redirect(url_for('index'))
 
 
-def fetch_post_by_id(post_id):
-    with open('blog_posts.json', 'r') as file:
-        blog_posts = json.load(file)
-    for post in blog_posts:
-        if post.get('id') == post_id:
-            return post
-    return None
-
-
 @app.route('/update/<int:post_id>', methods=['GET', 'POST'])
 def update(post_id):
     with open('blog_posts.json', 'r') as file:
@@ -74,3 +66,6 @@ def update(post_id):
         return redirect(url_for('index'))
 
     return render_template('update.html', post=post)
+
+if __name__ == "__main__":
+    app.run(debug=True)
