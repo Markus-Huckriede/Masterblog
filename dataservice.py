@@ -17,3 +17,15 @@ def delete_blog_post(post_id):
     updated_posts = [post for post in blog_posts if post['id'] != post_id]
     with open('blog_posts.json', 'w') as file:
         json.dump(updated_posts, file, indent=4)
+
+
+def validate_post_form(form):
+
+    title = form.get('title', '').strip()
+    content = form.get('content', '').strip()
+    author = form.get('author', '').strip()
+
+    if not title or not content or not author:
+        return None, "All fields are required."
+
+    return {'title': title, 'content': content, 'author': author}, None

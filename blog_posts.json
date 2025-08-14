@@ -8,7 +8,19 @@
     {
         "id": 2,
         "author": "Jane Doe",
-        "title": "Second Post",
+        "title": "",
         "content": "This is another post."
+    },
+    {
+        "author": "Unknown",
+        "title": "Question",
+        "content": "Whatuuuuuuuuuuuup",
+        "id": 3
+    },
+    {
+        "author": "Harry",
+        "title": "Yup",
+        "content": "Snoop D O double G",
+        "id": 4
     }
 ]
