@@ -17,7 +17,8 @@
             {% endif %}
             <p>{{ post.content }}</p>
 
-            <form action="{{ url_for('delete', post_id=post.id) }}" method="get">
+            <form action="{{ url_for('delete', post_id=post.id) }}" method="get"
+            onsubmit = "return confirm('Are you sure, you want to delete?');">
                 <button type="submit">Delete</button>
 
             </form>
