@@ -1,26 +1,24 @@
 [
     {
+        "title": "Erster Blogeintrag",
+        "content": "Das ist mein erster Blogeintrag. :-)",
+        "author": "Piers",
+        "created_at": "2025-09-08T22:45:58.179606",
         "id": 1,
-        "author": "John Doe",
-        "title": "First Post",
-        "content": "This is my first post."
+        "updated_at": "2025-09-08T22:51:10.583676"
     },
     {
-        "id": 2,
-        "author": "Jane Doe",
-        "title": "",
-        "content": "This is another post."
+        "title": "Zweiter Post",
+        "content": "Hier ist mein zweiter Blogeintrag",
+        "author": "Piers",
+        "created_at": "2025-09-08T22:52:48.180243",
+        "id": 2
     },
     {
-        "author": "Unknown",
-        "title": "Question",
-        "content": "Whatuuuuuuuuuuuup",
+        "title": "Bitcoin",
+        "content": "Bitcoin wird 2030 600.000 $ erreichen.",
+        "author": "Piers",
+        "created_at": "2025-09-08T23:04:07.142355",
         "id": 3
-    },
-    {
-        "author": "Harry",
-        "title": "Yup",
-        "content": "Snoop D O double G",
-        "id": 4
     }
 ]

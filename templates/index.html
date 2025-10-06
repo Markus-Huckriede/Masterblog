@@ -9,27 +9,33 @@
 <body>
     <h1>Welcome to My Flask Blog!</h1>
 
-    <p><a href="{{ url_for('add') }}">Add New Post</a></p>
+    <p><a id="add_link" href="{{ url_for('add') }}">Add New Post</a></p>
 
     {% for post in posts %}
-        <div class="post">
-            <h2>{{ post.title }}</h2>
-            {% if post.author %}
-                <p><em>Written by {{ post.author }}</em></p>
-            {% endif %}
-            <p>{{ post.content }}</p>
+    <div class="post">
+        <h2>{{ post.title }}</h2>
+        {% if post.author %}
+            <p><em>Written by {{ post.author }}</em></p>
+        {% endif %}
+        <p>{{ post.content }}</p>
 
+        {% if post.updated_at %}
+            <small><em>Updated: {{ post.display_date }}</em></small>
+        {% else %}
+            <small>Created: {{ post.display_date }}</small>
+        {% endif %}
+
+        <div class="post-actions">
             <form action="{{ url_for('delete', post_id=post.id) }}" method="get"
-            onsubmit = "return confirm('Are you sure, you want to delete?');">
+                  onsubmit="return confirm('Are you sure you want to delete?');">
                 <button type="submit">Delete</button>
-
             </form>
 
             <form action="{{ url_for('update', post_id=post.id) }}" method="get">
                 <button type="submit">Update</button>
             </form>
         </div>
-        <hr>
+    </div>
     {% endfor %}
 </body>
 </html>

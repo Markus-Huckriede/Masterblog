@@ -1,27 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F5F5F5;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #F5F5DC; /* sanftes Beige für den Hintergrund */
     padding: 20px;
-    color: #333;
+    color: #333333; /* dunkles Grau für Text */
 }
 
 h1 {
     text-align: center;
-    color: #4F4F4F;
+    color: #4F4F4F; /* dunkleres Grau für Überschrift */
+    font-size: 42px;
+    margin-bottom: 30px;
 }
 
 .post {
-    background-color: #FFF;
-    border: 1px solid #DDD;
+    background-color: #FFFFFF; /* klassisches Weiß */
+    border: 2px solid #CCCCCC; /* dezenter Rahmen */
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 5px; /* leicht abgerundet */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* dezente Tiefe */
 }
 
 .post h2 {
     margin-top: 0;
+    color: #333333; /* harmonisch mit Body-Text */
+    font-size: 24px;
 }
 
 .post p {
     margin: 10px 0;
+    line-height: 1.5; /* besser lesbar */
+}
+
+#add_link {
+    color: #4F4F4F;
+    text-decoration: underline;
 }
