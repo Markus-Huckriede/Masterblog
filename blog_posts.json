@@ -1,18 +1,11 @@
 [
     {
-        "title": "Erster Blogeintrag",
-        "content": "Das ist mein erster Blogeintrag. :-)",
-        "author": "Piers",
-        "created_at": "2025-09-08T22:45:58.179606",
-        "id": 1,
-        "updated_at": "2025-09-08T22:51:10.583676"
-    },
-    {
         "title": "Zweiter Post",
-        "content": "Hier ist mein zweiter Blogeintrag",
+        "content": "Hier ist mein zweiter Blogeintrag. !",
         "author": "Piers",
         "created_at": "2025-09-08T22:52:48.180243",
-        "id": 2
+        "id": 2,
+        "updated_at": "2025-10-06T11:31:01.063046"
     },
     {
         "title": "Bitcoin",
