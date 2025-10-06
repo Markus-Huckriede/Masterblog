@@ -32,12 +32,10 @@ def add():
         if error:
             return render_template('add.html', error=error, form=request.form)
 
-        # Neues Post bekommt Datum & Uhrzeit
         post_data['created_at'] = datetime.now().isoformat()
         dataservice.add_blog_post(post_data)
         return redirect(url_for('index'))
 
-    # GET: form als leeres dict übergeben
     return render_template('add.html', form={})
 
 
@@ -64,7 +62,6 @@ def update(post_id):
         post.update(post_data)
         post['updated_at'] = datetime.now().isoformat()
 
-        # speichere aktualisierte Posts
         with open('blog_posts.json', 'w') as file:
             json.dump(blog_posts, file, indent=4)
 
