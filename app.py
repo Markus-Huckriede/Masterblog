@@ -49,7 +49,7 @@ def delete(post_id):
 @app.route('/update/<int:post_id>', methods=['GET', 'POST'])
 def update(post_id):
     blog_posts = dataservice.get_blog_posts()
-    post = next((p for p in blog_posts if p['id'] == post_id), None)
+    post = next((p for p in blog_posts if p['id'] == post_id), None)  # Post finden
 
     if not post:
         return "Post not found", 404
@@ -70,6 +70,6 @@ def update(post_id):
     return render_template('update.html', post=post)
 
 
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5002))
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run(debug=True, port=5001)
